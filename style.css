@@ -1,0 +1,212 @@
+/* ----------------------------------------------------- */
+/* VARIABILE & BAZĂ */
+/* ----------------------------------------------------- */
+
+:root {
+    --primary-color: #e30613; /* Roșu puternic - simulează o culoare de club */
+    --secondary-color: #1e3a5f; /* Albastru închis */
+    --bg-color: #f0f2f5;
+    --text-color: #333;
+    --card-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    display: flex;
+    flex-direction: column; /* Stivuiește elementele: Header, Main, Footer */
+    min-height: 100vh;
+}
+
+/* ----------------------------------------------------- */
+/* ANTET (HEADER) */
+/* ----------------------------------------------------- */
+
+header {
+    background-color: var(--secondary-color);
+    color: white;
+    padding: 15px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+    font-size: 24px;
+    font-weight: 700;
+}
+
+header nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 400;
+    transition: color 0.3s;
+}
+
+header nav a:hover {
+    color: var(--primary-color);
+}
+
+/* ----------------------------------------------------- */
+/* CONȚINUT PRINCIPAL (MAIN) ȘI CARD DE LOGIN */
+/* ----------------------------------------------------- */
+
+main {
+    flex-grow: 1; /* Ocupă spațiul rămas, împingând footer-ul jos */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.login-card {
+    background-color: #fff;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: var(--card-shadow);
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+}
+
+.login-card h1 {
+    font-weight: 600;
+    margin-bottom: 5px;
+    color: var(--secondary-color);
+}
+
+.subtitle {
+    color: #666;
+    margin-bottom: 30px;
+    font-size: 14px;
+}
+
+/* ----------------------------------------------------- */
+/* FORMULAR ȘI INPUT-URI */
+/* ----------------------------------------------------- */
+
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: var(--text-color);
+    font-size: 14px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    border-color: var(--primary-color);
+    outline: none;
+}
+
+/* Opțiuni Suplimentare (Aminteste-mă & Parolă uitată) */
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 14px;
+}
+
+.forgot-password {
+    color: var(--primary-color);
+    text-decoration: none;
+    transition: opacity 0.3s;
+}
+
+.forgot-password:hover {
+    opacity: 0.8;
+}
+
+/* Butonul de Submit */
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 18px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.1s;
+}
+
+.submit-btn:hover {
+    background-color: #b3040c; /* O nuanță mai închisă a culorii primare */
+    transform: translateY(-1px);
+}
+
+/* Link de Înregistrare */
+.register-info {
+    margin-top: 30px;
+    font-size: 14px;
+    color: #666;
+}
+
+.register-info a {
+    color: var(--secondary-color);
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.register-info a:hover {
+    text-decoration: underline;
+}
+
+/* ----------------------------------------------------- */
+/* SUBSOL (FOOTER) */
+/* ----------------------------------------------------- */
+
+footer {
+    background-color: #ddd;
+    color: #555;
+    padding: 15px;
+    text-align: center;
+    font-size: 12px;
+}
+
+/* ----------------------------------------------------- */
+/* RESPONSIVE DESIGN (Pentru telefoane mobile) */
+/* ----------------------------------------------------- */
+
+@media (max-width: 600px) {
+    header {
+        padding: 10px 20px;
+        flex-direction: column;
+    }
+    header nav {
+        margin-top: 10px;
+    }
+    header nav a {
+        margin: 0 10px;
+    }
+    
+    .login-card {
+        margin: 10px;
+        padding: 30px 25px;
+        box-shadow: none; /* Eliminăm umbra pe mobil pentru un aspect mai curat */
+    }
+}

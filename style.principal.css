@@ -1,0 +1,140 @@
+/* ----------------------------------------------------- */
+/* STILIZARE SPECIFICĂ PAGINII PRINCIPALE (index.html) */
+/* ----------------------------------------------------- */
+
+/* Secțiunea Hero - Banner-ul principal */
+.hero {
+    background-color: #ffffff;
+    padding: 60px 20px;
+    text-align: center;
+    margin-bottom: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+}
+
+.hero h1 {
+    font-size: 36px;
+    color: var(--secondary-color); /* Folosește culoarea din style.login.css */
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #666;
+}
+
+/* Containerul Listei de Meciuri */
+.match-list-container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px 40px;
+}
+
+.match-list-container h2 {
+    text-align: center;
+    margin-bottom: 30px;
+    font-size: 28px;
+    color: var(--primary-color);
+}
+
+/* Cardul Individual al Meciului */
+.match-card {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fff;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    padding: 20px;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.match-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+.match-info {
+    text-align: left;
+}
+
+.match-date {
+    display: block;
+    font-size: 14px;
+    color: var(--primary-color);
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.match-info h3 {
+    font-size: 20px;
+    color: var(--secondary-color);
+    margin: 0;
+}
+
+.location {
+    font-size: 14px;
+    color: #888;
+    margin-top: 5px;
+}
+
+/* Detaliile Meciului (Preț & Buton) */
+.match-details {
+    text-align: right;
+}
+
+.price {
+    display: block;
+    font-size: 18px;
+    font-weight: 700;
+    color: #333;
+    margin-bottom: 10px;
+}
+
+.buy-button {
+    display: inline-block;
+    padding: 8px 15px;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.buy-button:hover {
+    background-color: #b3040c;
+}
+
+.view-all-link {
+    display: block;
+    text-align: center;
+    margin-top: 30px;
+    font-size: 16px;
+    color: var(--secondary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.view-all-link:hover {
+    text-decoration: underline;
+}
+
+
+/* Media Query pentru Mobil */
+@media (max-width: 768px) {
+    .match-card {
+        flex-direction: column; /* Stivuim elementele pe verticală */
+        text-align: center;
+    }
+
+    .match-info, .match-details {
+        text-align: center;
+        width: 100%;
+    }
+
+    .match-details {
+        margin-top: 15px;
+    }
+}
