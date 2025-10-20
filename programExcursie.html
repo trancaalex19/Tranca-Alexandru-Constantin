@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Programul excursiei la munte</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f9f9f9;
+            margin: 0;
+            padding: 20px;
+        }
+        /* Cerința A & D: Titlu centrat */
+        h1 {
+            text-align: center;
+            color: #2a623d; /* O nuanță de verde, similară cu exemplul */
+        }
+        /* Cerința B & D: Imagine centrată, cu colțuri rotunjite și umbră */
+        img {
+            display: block;
+            margin: 20px auto;
+            border-radius: 15px; /* Colțuri rotunjite */
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Umbră discretă */
+            max-width: 100%;
+            height: auto;
+        }
+        /* Cerința C: Stil pentru tabel */
+        table {
+            width: 80%; /* Ocupă 80% din lățimea paginii */
+            margin: 20px auto; /* Centrat pe pagină */
+            border-collapse: collapse; /* Linii simple pentru borduri */
+        }
+        /* Cerința D: Borduri vizibile pentru tabel, celule header și celule date */
+        th, td {
+            border: 1px solid #ccc; /* Borduri vizibile */
+            padding: 12px;
+            text-align: left;
+        }
+        /* Cerința D: Antetul (<th>) cu fundal diferit */
+        th {
+            background-color: #D5E8D4; /* Verde deschis, similar cu exemplul */
+        }
+        /* Cerința D: Culori alternative pentru rânduri (folosim <tbody> pentru a nu afecta antetul) */
+        tbody tr:nth-child(even) {
+            background-color: #f2f2f2; /* Culoare alternativă */
+        }
+        tbody tr:nth-child(odd) {
+            background-color: #ffffff; /* Culoare standard */
+        }
+		/* Cerința D: Schimbarea fundalului la mouse-over pe un rând */
+        tbody tr:hover {
+            background-color: #e0e0e0; /* Culoare la hover */
+            cursor: pointer;
+        }
+        /* Cerința E: Paragraf scurt la final, centrat și stilizat */
+        p {
+            text-align: center;
+            font-style: italic;
+            font-size: 0.9em;
+            color: #555;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Programul excursiei la munte</h1>
+    <img src="poza1.jpg" alt="Peisaj montan cu brazi și cer senin">
+    <table>
+        <thead>
+            <tr>
+                <th>Ziua</th>
+                <th>Activitate principală</th>
+                <th>Locație</th>
+                <th>Durată (ore)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>1</td>
+                <td>Drumeție spre cabană</td>
+                <td>Valea Cerbului</td>
+                <td>4 ore</td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>Vizită la lacul glaciar</td>
+                <td>Lacul Bâlea</td>
+                <td>5 ore</td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>Relaxare și picnic</td>
+                <td>Poiana Stânei</td>
+                <td>3 ore</td>
+            </tr>
+        </tbody>
+    </table>
+    <p>Excursia are scopul de a oferi o experiență montană relaxantă și educativă în mijlocul naturii.</p>
+</body>
+</html>
