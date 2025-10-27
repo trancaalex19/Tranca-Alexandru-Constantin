@@ -1,0 +1,352 @@
+/* --- Stiluri Globale --- */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7f6; /* Gri foarte deschis pentru fundal */
+    color: #333;
+    line-height: 1.6;
+    scroll-behavior: smooth; /* Pentru scroll lin la ancore */
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- Header --- */
+header {
+    background-color: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: sticky; /* Headerul rămâne vizibil la scroll */
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem; /* 24px */
+    font-weight: 700;
+    color: #2c3e50; /* Un bleumarin închis, elegant */
+}
+
+nav a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: #555;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav a:hover, nav a.active {
+    color: #007bff; /* Albastrul principal al site-ului */
+}
+
+/* --- Secțiunea Hero (Pagina Principală) --- */
+.hero {
+    position: relative;
+    padding: 100px 20px;
+    text-align: center;
+    color: white;
+    /* Asigurați-vă că aveți imaginea 'hero-bg.jpg' în folder */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-content h1 {
+    font-size: 3rem; /* 48px */
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7); /* Umbră pentru lizibilitate */
+}
+
+.hero-content p {
+    font-size: 1.25rem; /* 20px */
+    font-weight: 300;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: #0056b3; /* Nuanță mai închisă la hover */
+    transform: translateY(-2px);
+}
+
+/* --- Secțiunea Meciuri (Pagina Meciuri & Principală) --- */
+.upcoming-matches {
+    padding: 60px 0;
+}
+
+.upcoming-matches h2 {
+    text-align: center;
+    font-size: 2.5rem; /* 40px */
+    font-weight: 700;
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+.match-list {
+    display: grid;
+    /* 2 coloane pe desktop */
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 30px; /* Spațiu între carduri */
+}
+
+.match-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08); /* Umbră subtilă */
+    padding: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.match-card:hover {
+    transform: translateY(-5px); /* Efect de ridicare */
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.match-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.match-card .match-info {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.7;
+}
+
+.ticket-button {
+    display: block;
+    width: 100%;
+    background-color: #f0f7ff; /* Un albastru foarte deschis */
+    color: #007bff;
+    padding: 12px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 8px;
+    border: 1px solid #bde0ff;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.ticket-button:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* --- Titluri Etape (Pagina Meciuri) --- */
+.upcoming-matches .etapa-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #333;
+    margin-top: 40px; /* Spațiu între grupurile de ligi */
+    margin-bottom: 20px;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+/* Elimină spațiul de sus pentru primul titlu de etapă */
+.upcoming-matches h2 + .etapa-title {
+    margin-top: 0;
+}
+
+/* --- Secțiunea Clasamente (Pagina Clasamente) --- */
+.standings {
+    padding: 40px 0;
+    background-color: #f4f7f6;
+}
+
+/* Adaugă spațiu sus doar când e o pagină separată */
+.standings.page-section {
+    padding: 60px 0;
+    background-color: #ffffff; /* Fundal alb pentru pagina dedicată */
+}
+
+.standings h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+.standings h3 {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #333;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.standings-wrapper {
+    max-width: 900px; /* Centrează tabelele */
+    margin: 0 auto;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse; /* Linii simple, curate */
+    margin-bottom: 40px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+    border-radius: 8px;
+    overflow: hidden; /* Necesar pentru a rotunji colțurile header-ului */
+}
+
+table thead tr {
+    background-color: #007bff;
+    color: #ffffff;
+    text-align: left;
+}
+
+table th, table td {
+    padding: 12px 15px;
+}
+
+table tbody tr {
+    border-bottom: 1px solid #f0f0f0; /* Linie de separare fină */
+}
+
+table tbody tr:nth-of-type(even) {
+    background-color: #f9f9f9; /* Culoare alternantă (zebra) */
+}
+
+table tbody tr:last-of-type {
+    border-bottom: 2px solid #007bff; /* Linie finală albastră */
+}
+
+table tbody tr:hover {
+    background-color: #f1f1f1; /* Culoare la hover */
+}
+
+table td strong {
+    font-weight: 700;
+    color: #000;
+}
+
+/* --- Secțiunea Știri (Pagina Principală) --- */
+.news-section {
+    padding: 60px 0;
+    background-color: #ffffff; /* Alternăm culoarea fundalului */
+}
+
+.news-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+.news-list {
+    display: grid;
+    /* 3 coloane pe desktop */
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.news-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden; /* Taie colțurile imaginii */
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.news-card img {
+    width: 100%;
+    height: 200px; /* Înălțime fixă pentru imagini */
+    object-fit: cover; /* Asigură umplerea spațiului, fără a deforma imaginea */
+}
+
+.news-card .news-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Asigură că acest conținut umple cardul */
+}
+
+.news-card .news-meta {
+    font-size: 0.85rem;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.news-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    flex-grow: 1; /* Ocupă spațiul rămas */
+}
+
+.news-card p {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 15px;
+}
+
+.news-card .read-more {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: auto; /* Împinge link-ul în partea de jos */
+}
+
+.news-card .read-more:hover {
+    text-decoration: underline;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #343a40; /* Footer închis la culoare */
+    color: #f8f9fa;
+    font-size: 0.9rem;
+    margin-top: 0;
+}
