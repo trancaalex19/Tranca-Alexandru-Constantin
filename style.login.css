@@ -1,0 +1,196 @@
+/* Resetați stilurile de bază și setați fontul principal */
+body, html {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100%;
+    font-family: 'Poppins', sans-serif;
+    color: #333;
+    line-height: 1.6;
+
+    /* --- MODIFICARE PENTRU FUNDAL LOCAL --- */
+    background-image: 
+        linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+        url('fundalpaginalogin.jpg'); /* Aici folosește fișierul local */
+    
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    /* --- SFÂRȘIT MODIFICARE --- */
+}
+
+/* --- Header --- */
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background-color: rgba(255, 255, 255, 0.95); /* Ușoară transparență pe fundal */
+    border-bottom: 1px solid #e0e0e0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05); /* O umbră subtilă */
+}
+
+.logo {
+    font-size: 1.5rem; /* 24px */
+    font-weight: 700;
+    color: #2c3e50; /* O culoare bleumarin închis */
+}
+
+nav a {
+    margin-left: 20px;
+    text-decoration: none;
+    color: #555;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #007bff; /* O culoare de accent la hover */
+}
+
+/* --- Main Content & Login Card --- */
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px; /* Spațiu sus/jos */
+    min-height: calc(100vh - 160px); /* Asigură că main umple spațiul (100% - header - footer) */
+    box-sizing: border-box; 
+}
+
+.login-card {
+    background-color: #ffffff;
+    padding: 40px;
+    border-radius: 12px;
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15); /* Umbră mai pronunțată */
+    width: 100%;
+    max-width: 450px;
+    text-align: center;
+    box-sizing: border-box; 
+}
+
+.login-card h1 {
+    font-size: 2rem; /* 32px */
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 10px;
+    color: #2c3e50;
+}
+
+.login-card .subtitle {
+    font-size: 1rem; /* 16px */
+    color: #777;
+    margin-bottom: 30px;
+}
+
+/* --- Formular --- */
+form {
+    text-align: left;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    font-size: 0.9rem; /* 14.4px */
+    color: #444;
+}
+
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box; /* Asigură că padding-ul nu afectează lățimea */
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input[type="email"]:focus,
+.form-group input[type="password"]:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0,123,255,0.2);
+    outline: none;
+}
+
+/* --- Opțiuni formular (Ține-mă minte / Am uitat parola) --- */
+.options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 25px;
+    font-size: 0.9rem;
+}
+
+.options label {
+    display: flex;
+    align-items: center;
+    color: #555;
+    cursor: pointer;
+}
+
+.options input[type="checkbox"] {
+    margin-right: 8px;
+}
+
+.options .forgot-password {
+    color: #007bff;
+    text-decoration: none;
+}
+
+.options .forgot-password:hover {
+    text-decoration: underline;
+}
+
+/* --- Buton Submit --- */
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    border: none;
+    border-radius: 8px;
+    background-color: #007bff; /* Albastru principal */
+    color: white;
+    font-size: 1rem;
+    font-weight: 700;
+    font-family: 'Poppins', sans-serif;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3; /* O nuanță mai închisă la hover */
+    transform: translateY(-2px); /* Un mic efect de ridicare */
+}
+
+/* --- Link Înregistrare --- */
+.register-info {
+    margin-top: 30px;
+    font-size: 0.95rem;
+    color: #555;
+}
+
+.register-info a {
+    color: #007bff;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.register-info a:hover {
+    text-decoration: underline;
+}
+
+/* --- Footer --- */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #343a40; /* Footer închis */
+    color: #f8f9fa;
+    font-size: 0.9rem;
+}
