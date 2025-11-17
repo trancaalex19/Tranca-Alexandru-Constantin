@@ -30,47 +30,45 @@
                 
                 <div class="contact-form-wrapper">
                     <h3>Trimite-ne un mesaj</h3>
-                    <form action="/send-message" method="POST">
+                    
+                    <form id="contact-form" action="/send-message" method="POST" novalidate>
+                        
                         <div class="form-group">
                             <label for="nume">Numele dumneavoastră:</label>
                             <input type="text" id="nume" name="nume" placeholder="Introduceți numele complet" required>
+                            <div class="error-message"></div>
                         </div>
+                        
                         <div class="form-group">
                             <label for="email">Adresa de Email:</label>
                             <input type="email" id="email" name="email" placeholder="exemplu@domeniu.ro" required>
+                            <div class="error-message"></div>
                         </div>
+                        
                         <div class="form-group">
                             <label for="subiect">Subiect:</label>
                             <input type="text" id="subiect" name="subiect" placeholder="Ex: Problema cu biletul #12345" required>
+                            <div class="error-message"></div>
                         </div>
+                        
                         <div class="form-group">
                             <label for="mesaj">Ce vă deranjează?</label>
                             <textarea id="mesaj" name="mesaj" rows="6" placeholder="Descrieți problema sau întrebarea dumneavoastră aici..." required></textarea>
+                            <div class="error-message"></div>
                         </div>
+                        
                         <button type="submit" class="cta-button">Trimite Mesajul</button>
                     </form>
                 </div>
                 
                 <div class="contact-details-wrapper">
                     <h3>Informații Contact</h3>
-                    
                     <h4>Sediul Firmei:</h4>
-                    <p>
-                        Strada Biletelor Nr. 1, Sector 1<br>
-                        București, 010101<br>
-                        România
-                    </p>
-
+                    <p>Strada Biletelor Nr. 1, Sector 1<br>București, 010101<br>România</p>
                     <h4>Număr de Contact:</h4>
-                    <p>
-                        +40 123 456 789<br>
-                        (Luni - Vineri, 09:00 - 17:00)
-                    </p>
-                    
+                    <p>+40 123 456 789<br>(Luni - Vineri, 09:00 - 17:00)</p>
                     <h4>Email Suport:</h4>
-                    <p>
-                        contact@ticketingpro.ro
-                    </p>
+                    <p>contact@ticketingpro.ro</p>
                 </div>
 
             </div>
@@ -80,6 +78,8 @@
     <footer>
         <p>&copy; 2025 Ticketing Pro. Toate drepturile rezervate.</p>
     </footer>
+
+    <script src="script.ajutor.js"></script>
 
 </body>
 </html>

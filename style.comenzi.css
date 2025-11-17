@@ -1,3 +1,4 @@
+/* --- Stiluri Globale (EXISTENTE - NU LE-AM MODIFICAT) --- */
 body, html {
     margin: 0;
     padding: 0;
@@ -105,4 +106,132 @@ footer {
 .news-section {
     padding: 60px 0;
     background-color: #ffffff;
+}
+
+/* ============================================================
+   STILURI NOI ADĂUGATE PENTRU PAGINA DE COMENZI
+   ============================================================ */
+
+/* Containerul principal al paginii de comenzi */
+.order-history-page {
+    padding: 60px 0;
+    min-height: calc(100vh - 350px); /* Asigură că footer-ul stă jos dacă nu sunt comenzi */
+}
+
+.order-history-page h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 40px;
+}
+
+/* Zona unde se listează comenzile */
+#orders-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Cardul unei singure comenzi (generat de JavaScript) */
+.order-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-left: 5px solid #007bff; /* Linie albastră în stânga */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.order-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Detaliile comenzii (stânga) */
+.order-info h3 {
+    margin: 0 0 8px 0;
+    color: #2c3e50;
+    font-size: 1.2rem;
+}
+
+.order-details {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* Acțiunile comenzii (dreapta - preț și buton ștergere) */
+.order-actions {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.order-price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #28a745; /* Verde */
+}
+
+.delete-btn {
+    background-color: transparent;
+    border: 1px solid #dc3545;
+    color: #dc3545;
+    padding: 6px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.delete-btn:hover {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Mesajul pentru "Nu ai comenzi" */
+.empty-state-container {
+    text-align: center;
+    background: #fff;
+    padding: 50px 20px;
+    border-radius: 12px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    /* Ascuns implicit, afișat de JS dacă e cazul */
+    display: none; 
+}
+
+.empty-state-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.empty-state-text {
+    font-size: 1.1rem;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+/* Responsivitate pentru mobil */
+@media (max-width: 768px) {
+    .order-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .order-actions {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
 }

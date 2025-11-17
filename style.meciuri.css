@@ -6,7 +6,7 @@ body, html {
     background-color: #f4f7f6;
     color: #333;
     line-height: 1.6;
-    scroll-behavior: smooth; /* Asigură scroll lin */
+    scroll-behavior: smooth;
 }
 
 .container {
@@ -16,7 +16,7 @@ body, html {
 }
 
 /* ==============================================
-   CERINȚA 1: STRUCTURA PAGINII (CSS GRID)
+   1. STRUCTURA PAGINII (CSS GRID)
    ============================================== */
 .grid-container {
     display: grid;
@@ -35,7 +35,6 @@ body, html {
     box-shadow: 0 0 15px rgba(0,0,0,0.07);
 }
 
-/* --- Alocarea zonelor Grid --- */
 header {
     grid-area: header;
     background-color: #fff;
@@ -45,17 +44,17 @@ header {
 
 nav {
     grid-area: nav;
-    background-color: #2c3e50; /* Fundal închis pentru navigație */
+    background-color: #2c3e50;
     padding: 15px 40px;
     display: flex;
     justify-content: flex-start;
-    gap: 30px; /* Spațiu între linkurile din meniu */
+    gap: 30px;
 }
 
 main {
     grid-area: main;
     padding: 40px; 
-    background-color: #f4f7f6; /* Fundalul gri deschis */
+    background-color: #f4f7f6;
 }
 
 footer {
@@ -67,9 +66,7 @@ footer {
     font-size: 0.9rem;
 }
 
-/* ==============================================
-   CERINȚA 1 (continuare): BARA LATERALĂ (ASIDE)
-   ============================================== */
+/* --- Bara Laterală (ASIDE) --- */
 .sidebar {
     grid-area: aside;
     padding: 30px;
@@ -98,7 +95,6 @@ footer {
     text-decoration: underline;
 }
 
-/* CERINȚA 5: Imagini responsive (din aside) */
 .sidebar img {
     max-width: 100%;
     height: auto;
@@ -106,7 +102,7 @@ footer {
     margin-top: 10px;
 }
 
-/* --- Stiluri Header și Nav --- */
+/* --- Header / Nav Styles --- */
 .logo {
     font-size: 1.5rem;
     font-weight: 700;
@@ -115,18 +111,18 @@ footer {
 
 nav a {
     text-decoration: none;
-    color: #ffffff; /* Text alb pe fundal închis */
+    color: #ffffff;
     font-weight: 600;
     transition: color 0.3s ease;
     padding: 5px 0;
 }
 
 nav a:hover, nav a.active {
-    color: #58c0ff; /* Albastru mai deschis la hover */
+    color: #58c0ff;
 }
 
 /* ==============================================
-   STILURILE PENTRU CARDURILE DE MECIURI
+   2. CARDURI MECIURI & FLEXBOX (Asta lipsea!)
    ============================================== */
 .upcoming-matches h2 {
     text-align: center;
@@ -137,13 +133,10 @@ nav a:hover, nav a.active {
     margin-bottom: 40px;
 }
 
-/* ==============================================
-   CERINȚA 2: CARDURILE (CSS FLEXBOX)
-   ============================================== */
 .match-list {
-    display: flex;          /* Folosim Flexbox */
-    flex-wrap: wrap;        /* Cardurile coboară pe rândul următor */
-    gap: 30px;              /* Spațiu între carduri */
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
 }
 
 .match-card {
@@ -152,11 +145,10 @@ nav a:hover, nav a.active {
     box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
     padding: 25px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    
-    flex-basis: 400px; /* Lățimea de bază a unui card */
-    flex-grow: 1;      /* Permite cardurilor să crească și să umple rândul */
+    flex-basis: 400px; 
+    flex-grow: 1;      
     box-sizing: border-box; 
-    min-width: 300px; /* Lățime minimă */
+    min-width: 300px;
 }
 
 .match-card:hover {
@@ -179,6 +171,7 @@ nav a:hover, nav a.active {
     line-height: 1.7;
 }
 
+/* Butonul din card */
 .ticket-button {
     display: block;
     width: 100%;
@@ -192,6 +185,8 @@ nav a:hover, nav a.active {
     border: 1px solid #bde0ff;
     box-sizing: border-box;
     transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer; /* Important pentru button */
+    font-family: 'Poppins', sans-serif;
 }
 
 .ticket-button:hover {
@@ -214,24 +209,23 @@ nav a:hover, nav a.active {
     margin-top: 0;
 }
 
-
 /* ==============================================
-   CERINȚA 6: BUTON "MERGI SUS"
+   3. BUTON "MERGI SUS"
    ============================================== */
 .back-to-top {
-    position: fixed; /* Stă pe loc la scroll */
+    position: fixed;
     bottom: 20px;
     right: 20px;
     background-color: #007bff;
     color: white;
     padding: 10px 15px;
-    border-radius: 50%; /* Cerc */
+    border-radius: 50%;
     font-size: 20px;
     line-height: 1;
     text-decoration: none;
     box-shadow: 0 4px 10px rgba(0,0,0,0.2);
     transition: background-color 0.3s, transform 0.3s;
-    z-index: 1001; /* Stă deasupra la orice */
+    z-index: 1001;
 }
 
 .back-to-top:hover {
@@ -239,48 +233,231 @@ nav a:hover, nav a.active {
     transform: translateY(-3px);
 }
 
+/* ==============================================
+   4. STILURI MODAL (FEREASTRA POP-UP)
+   ============================================== */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #888;
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    color: #333;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: #2c3e50;
+    font-size: 1.5rem;
+}
+
+.modal-subtitle {
+    color: #666;
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+}
+
+.ticket-selection-group {
+    margin-bottom: 20px;
+}
+
+.ticket-selection-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #444;
+}
+
+.ticket-selection-group select,
+.ticket-selection-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.price-display {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #2c3e50;
+    margin-bottom: 25px;
+    border: 1px solid #e9ecef;
+}
+
+.price-display span {
+    color: #007bff;
+    font-size: 1.4rem;
+}
+
+.confirm-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border: none;
+}
 
 /* ==============================================
-   CERINȚA 3 & 4: DESIGN RESPONSIV (MOBILE)
+   5. STILURI COȘ CUMPĂRĂTURI (SIDEBAR)
+   ============================================== */
+.cart-card {
+    background-color: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.cart-card h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    color: #2c3e50;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+#lista-activitati {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+
+.bilet-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    font-size: 0.9rem;
+}
+
+.bilet-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.bilet-info strong {
+    color: #007bff;
+    font-size: 0.95rem;
+}
+
+.bilet-pret {
+    font-weight: bold;
+    color: #28a745;
+    margin: 0 10px;
+}
+
+.sterge-btn {
+    background-color: #ffcccc;
+    color: #d9534f;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    font-weight: bold;
+    line-height: 1;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sterge-btn:hover {
+    background-color: #d9534f;
+    color: white;
+}
+
+/* ==============================================
+   6. DESIGN RESPONSIV (MOBILE)
    ============================================== */
 @media (max-width: 900px) {
-    
-    /* Trecem la layout pe o singură coloană */
     .grid-container {
-        grid-template-columns: 1fr; /* O singură coloană */
+        grid-template-columns: 1fr;
         grid-template-areas:
             "header"
             "nav"
             "main"
-            "aside"  /* 'aside' trece sub 'main' */
+            "aside"
             "footer";
     }
 
-    /* Centram navigația pe mobil */
     nav {
         justify-content: center;
-        flex-wrap: wrap; /* Linkurile pot coborî dacă nu au loc */
+        flex-wrap: wrap;
         padding: 15px 20px;
     }
 
     main {
-        padding: 20px; /* Padding mai mic pe mobil */
+        padding: 20px;
     }
 
     .sidebar {
-        border-left: none; /* Scoatem bordura din stânga */
-        border-top: 1px solid #e0e0e0; /* Adăugăm bordură sus */
+        border-left: none;
+        border-top: 1px solid #e0e0e0;
     }
 
-    /* CERINȚA 3: Cardurile se reașează vertical */
     .match-card {
-        /* Forțează cardul să ocupe toată lățimea */
-        flex-basis: 100%; 
+        flex-basis: 100%;
     }
 
-    /* CERINȚA 4: Fonturi ajustate */
     .upcoming-matches h2 {
-        font-size: 2rem; /* Font mai mic pentru titlu */
+        font-size: 2rem;
     }
     
     header {
