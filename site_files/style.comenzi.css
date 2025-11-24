@@ -1,0 +1,245 @@
+/* --- Stiluri Globale (EXISTENTE - NU LE-AM MODIFICAT) --- */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+header {
+    background-color: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2c3e50; /* Culoarea originală */
+    text-decoration: none; /* Scoatem sublinierea */
+    cursor: pointer; /* Mouse-ul devine mânuță */
+    display: inline-block;
+}
+
+/* Asigură-te că nu se face albastru când pui mouse-ul pe el */
+.logo:hover {
+    color: #2c3e50; 
+}
+
+nav a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: #555;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav a:hover, nav a.active {
+    color: #007bff;
+}
+
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #343a40;
+    color: #f8f9fa;
+    font-size: 0.9rem;
+    margin-top: 0;
+}
+
+.hero {
+    position: relative;
+    padding: 100px 20px;
+    text-align: center;
+    color: white;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('hero-bg.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    font-weight: 300;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+.news-section {
+    padding: 60px 0;
+    background-color: #ffffff;
+}
+
+/* ============================================================
+   STILURI NOI ADĂUGATE PENTRU PAGINA DE COMENZI
+   ============================================================ */
+
+/* Containerul principal al paginii de comenzi */
+.order-history-page {
+    padding: 60px 0;
+    min-height: calc(100vh - 350px); /* Asigură că footer-ul stă jos dacă nu sunt comenzi */
+}
+
+.order-history-page h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    color: #2c3e50;
+    margin-bottom: 40px;
+}
+
+/* Zona unde se listează comenzile */
+#orders-list {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* Cardul unei singure comenzi (generat de JavaScript) */
+.order-card {
+    background: #fff;
+    border-radius: 10px;
+    padding: 20px 25px;
+    margin-bottom: 20px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    border-left: 5px solid #007bff; /* Linie albastră în stânga */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.order-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+}
+
+/* Detaliile comenzii (stânga) */
+.order-info h3 {
+    margin: 0 0 8px 0;
+    color: #2c3e50;
+    font-size: 1.2rem;
+}
+
+.order-details {
+    color: #666;
+    font-size: 0.9rem;
+    line-height: 1.6;
+}
+
+/* Acțiunile comenzii (dreapta - preț și buton ștergere) */
+.order-actions {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    gap: 10px;
+}
+
+.order-price {
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: #28a745; /* Verde */
+}
+
+.delete-btn {
+    background-color: transparent;
+    border: 1px solid #dc3545;
+    color: #dc3545;
+    padding: 6px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.3s ease;
+    font-family: 'Poppins', sans-serif;
+}
+
+.delete-btn:hover {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Mesajul pentru "Nu ai comenzi" */
+.empty-state-container {
+    text-align: center;
+    background: #fff;
+    padding: 50px 20px;
+    border-radius: 12px;
+    max-width: 600px;
+    margin: 0 auto;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+    /* Ascuns implicit, afișat de JS dacă e cazul */
+    display: none; 
+}
+
+.empty-state-icon {
+    font-size: 4rem;
+    margin-bottom: 20px;
+    display: block;
+}
+
+.empty-state-text {
+    font-size: 1.1rem;
+    color: #777;
+    margin-bottom: 20px;
+}
+
+/* Responsivitate pentru mobil */
+@media (max-width: 768px) {
+    .order-card {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
+
+    .order-actions {
+        width: 100%;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

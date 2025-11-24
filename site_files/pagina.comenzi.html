@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Comenzile Mele - Ticketing Pro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.comenzi.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="pagina.meciuri.html" class="logo">Ticketing Pro</a>
+            <nav>
+                <a href="pagina.meciuri.html">Meciuri</a>
+                <a href="pagina.clasamente.html">Clasamente</a>
+                <a href="pagina.comenzi.html" class="active">Comenzile mele</a>
+                <a href="pagina.ajutor.html">Ajutor</a>
+                <a href="pagina.login.html">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="order-history-page">
+        <div class="container">
+            <h2>Comenzile Mele</h2>
+            
+            <div id="orders-list" style="max-width: 800px; margin: 0 auto;"></div>
+
+            <div id="empty-state" class="empty-state-container">
+                <div class="empty-state-icon">🎟️</div> 
+                <p class="empty-state-text">
+                    Momentan nu aveți nicio comandă în istoric.<br>
+                    Biletele cumpărate vor apărea automat pe această pagină.
+                </p>
+            </div>
+
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Ticketing Pro. Toate drepturile rezervate.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const ordersList = document.getElementById('orders-list');
+            const emptyState = document.getElementById('empty-state');
+
+            function incarcaComenzi() {
+                // Citim din memorie
+                let comenzi = JSON.parse(localStorage.getItem('comenziBilete')) || [];
+
+                if (comenzi.length === 0) {
+                    ordersList.style.display = 'none';
+                    emptyState.style.display = 'block';
+                    return;
+                } else {
+                    ordersList.style.display = 'block';
+                    emptyState.style.display = 'none';
+                }
+
+                ordersList.innerHTML = '';
+
+                // Afișăm comenzile (invers cronologic)
+                comenzi.slice().reverse().forEach((comanda, index) => {
+                    const indexReal = comenzi.length - 1 - index;
+                    
+                    const card = document.createElement('div');
+                    card.className = 'order-card'; // Folosim clasa pentru stilizare
+                    card.innerHTML = `
+                        <div class="order-info">
+                            <h3>${comanda.meci}</h3>
+                            <div class="order-details">
+                                <strong>Zona:</strong> ${comanda.zona} <br>
+                                <strong>Bilete:</strong> ${comanda.cantitate} buc. <br>
+                                <strong>Data:</strong> ${comanda.data}
+                            </div>
+                        </div>
+                        <div class="order-actions">
+                            <div class="order-price">${comanda.pretTotal} RON</div>
+                            <button class="delete-btn" onclick="stergeComanda(${indexReal})">Anulează</button>
+                        </div>
+                    `;
+                    ordersList.appendChild(card);
+                });
+            }
+
+            window.stergeComanda = function(index) {
+                if(confirm('Sigur vrei să ștergi comanda?')) {
+                    let comenzi = JSON.parse(localStorage.getItem('comenziBilete')) || [];
+                    comenzi.splice(index, 1);
+                    localStorage.setItem('comenziBilete', JSON.stringify(comenzi));
+                    incarcaComenzi();
+                }
+            };
+
+            incarcaComenzi();
+        });
+    </script>
+
+</body>
+</html>

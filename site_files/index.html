@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ticketing Pro - Pagina Principală</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    
+    <link rel="stylesheet" href="style.principal.css"> 
+</head>
+<body id="top">
+
+    <header>
+        <div class="container">
+            <a href="pagina.principala.html" class="logo">Ticketing Pro</a> 
+            <nav>
+                <a href="pagina.meciuri.html" class="active">Meciuri</a>
+                <a href="pagina.clasamente.html">Clasamente</a>
+                <a href="pagina.comenzi.html">Comenzile mele</a>
+                <a href="pagina.ajutor.html">Ajutor</a>
+                <a href="pagina.login.html">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Bilete Liga 1 – Meciurile Săptămânii</h1>
+                <p>Cele mai așteptate derby-uri și evenimente sportive, acum disponibile online.</p>
+                <a href="#meciuri-urmatoare" class="cta-button">Vezi Meciurile</a>
+            </div>
+        </section>
+
+        <section id="meciuri-urmatoare" class="upcoming-matches">
+            <div class="container">
+                <h2>Cele Mai Importante Meciuri Ale Etapei</h2>
+                <div class="match-list">
+                    
+                    <div class="match-card">
+                        <h3>FCSB vs. Rapid București</h3>
+                        <p class="match-info">
+                            <strong>Dată:</strong> Sâmbătă, 25 Octombrie - 20:30<br>
+                            <strong>Stadion:</strong> Național Arena, București
+                        </p>
+                         <button class="ticket-button buy-btn" data-meci="FCSB vs. Rapid">Cumpără Bilete »</button>
+                    </div>
+
+                    <div class="match-card">
+                        <h3>CFR Cluj vs. Universitatea Craiova</h3>
+                        <p class="match-info">
+                            <strong>Dată:</strong> Duminică, 26 Octombrie - 17:00<br>
+                            <strong>Stadion:</strong> Dr. C. Rădulescu, Cluj-Napoca
+                        </p>
+                        <button class="ticket-button buy-btn" data-meci="CFR Cluj vs. Univ. Craiova">Cumpără Bilete »</button>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        
+        <section id="stiri" class="news-section">
+            <div class="container">
+                <h2>Știrile Săptămânii</h2>
+                <div class="news-list">
+                
+                    <div class="news-card">
+                        <img src="stire1.jpg" alt="Analiză meci"> 
+                        <div class="news-content">
+                            <p class="news-meta">Liga 1 | 19 Octombrie 2025</p>
+                            <h3>Analiză după derby: "A fost un meci tacticizat"</h3>
+                            <a href="pagina.stirea1.html" class="read-more">Citește mai mult »</a>
+                        </div>
+                    </div>
+                    
+                    <div class="news-card">
+                        <img src="stire2.jpg" alt="Jucător accidentat">
+                        <div class="news-content">
+                            <p class="news-meta">Transferuri | 18 Octombrie 2025</p>
+                            <h3>Mutare de ultimă oră! Atacantul Harlem Gnohéré semnează cu FCSB</h3>
+                            <a href="pagina.stirea2.html" class="read-more">Citește mai mult »</a>
+                        </div>
+                    </div>
+                    
+                    <div class="news-card">
+                        <img src="stire3.jpg" alt="Conferință de presă">
+                        <div class="news-content">
+                            <p class="news-meta">Națională | 17 Octombrie 2025</p>
+                            <h3>Selecționerul a anunțat lotul pentru meciurile viitoare</h3>
+                            <a href="pagina.stirea3.html" class="read-more">Citește mai mult »</a>
+                        </div>
+                    </div>
+                    
+                </div>
+            </div>
+        </section>
+        
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Ticketing Pro. Toate drepturile rezervate.</p>
+    </footer>
+    
+    <div id="ticket-modal" class="modal-overlay">
+        <div class="modal-content ticket-modal-content">
+            <span class="modal-close">&times;</span>
+            <h2 id="modal-match-title">Cumpără Bilete</h2>
+            <p class="modal-subtitle">Selectează zona și numărul de bilete.</p>
+            
+            <form id="purchase-form">
+                <div class="ticket-selection-group">
+                    <label for="zone-select">Alege Zona Stadionului:</label>
+                    <select id="zone-select" required>
+                        <option value="" disabled selected>-- Selectează o zonă --</option>
+                        <option value="peluza" data-price="30">Peluza (30 RON)</option>
+                        <option value="tribuna2" data-price="60">Tribuna 2 (60 RON)</option>
+                        <option value="tribuna1" data-price="100">Tribuna 1 (100 RON)</option>
+                        <option value="vip" data-price="250">VIP (250 RON)</option>
+                    </select>
+                </div>
+                <div class="ticket-selection-group">
+                    <label for="inputActivitate">Număr de bilete:</label>
+                    <input type="number" id="inputActivitate" min="1" max="10" value="1" required>
+                </div>
+                <div class="price-display">
+                    Preț Total: <span id="total-price">0</span> RON
+                </div>
+                <button type="submit" id="btnAdauga" class="cta-button confirm-btn">Adaugă în coș</button>
+            </form>
+        </div>
+    </div>
+    <div id="lista-activitati" style="display:none;"></div>
+    <script src="script.meciuri.js"></script>
+
+</body>
+</html>

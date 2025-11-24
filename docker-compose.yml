@@ -1,17 +1,26 @@
-version: '3.8'
 services:
   apache:
-    image: php:8.1-apache
-    container_name: lamp_apache
+    build:
+      context: .
+      dockerfile: Dockerfile.apache
+    container_name: ticketing_apache
     volumes:
-      - ./studenti:/var/www/html
+      # Volumul standard pentru fișierele site-ului
+      - ./site_files:/var/www/html
+      # FIX: Montează fișierul de configurare care forțează permisiunile Apache
+      - ./apache-config/000-default.conf:/etc/apache2/sites-available/000-default.conf
     ports:
       - "8080:80"
     depends_on:
       - mysql
+    links:
+      - mysql
+    # FIX: Setează permisiuni 777 în interiorul containerului la pornire
+    entrypoint: /bin/bash -c "chmod -R 777 /var/www/html && apache2-foreground" 
+  
   mysql:
     image: mysql:5.7
-    container_name: lamp_mysql
+    container_name: ticketing_mysql
     restart: always
     environment:
       MYSQL_ROOT_PASSWORD: root
@@ -19,9 +28,16 @@ services:
       MYSQL_USER: user
       MYSQL_PASSWORD: password
     ports:
-      - "3307:3307"
+      - "3307:3306"
     volumes:
       - db_data:/var/lib/mysql
+    
+    # ÎMBUNĂTĂȚIRE: Asigură că baza de date este gata înainte de a accepta conexiuni
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-p$$MYSQL_ROOT_PASSWORD"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
 
 volumes:
   db_data:

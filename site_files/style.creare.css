@@ -1,0 +1,185 @@
+/* =================================
+   FIȘIER: style.login.css
+   ================================= */
+
+/* --- Stiluri Globale --- */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f0f2f5; /* Culoare de rezervă */
+    color: #333;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- Header (Meniul de sus) --- */
+header {
+    background-color: #2c3e50; /* Fundal albastru-închis (ca în poza 2 și 3) */
+    color: #fff;
+    padding: 15px 0;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    position: relative;
+    z-index: 10;
+}
+
+header .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+header .logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: #007bff; /* Albastru deschis pentru logo */
+}
+
+header nav a {
+    color: #ecf0f1; /* Alb/Gri deschis pentru linkuri */
+    text-decoration: none;
+    margin-left: 25px;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+header nav a:hover {
+    color: #007bff;
+}
+
+/* --- Partea Principală (cu fundalul) --- */
+.auth-page {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    
+    /* PUNE AICI CALEA CĂTRE IMAGINEA TA! */
+    background-image: url('hero-bg.jpg'); 
+    
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+/* Stratul întunecat peste imaginea de fundal (pentru contrast) */
+.auth-page::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.5); /* Suprapunere neagră 50% */
+    z-index: 1;
+}
+
+/* --- Cardul Alb (Formularul) --- */
+.auth-card {
+    background-color: #ffffff;
+    padding: 40px 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    max-width: 450px;
+    width: 100%;
+    position: relative;
+    z-index: 2; /* Asigură că e peste stratul întunecat */
+    box-sizing: border-box;
+}
+
+.auth-card h1 {
+    font-size: 2.2rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+.auth-card .subtitle {
+    font-size: 0.95rem;
+    color: #777;
+    margin-bottom: 30px;
+}
+
+/* --- Stilurile Formularului --- */
+.form-group {
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group input[type="email"],
+.form-group input[type="password"],
+.form-group input[type="text"] {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0, 123, 255, 0.1);
+    outline: none;
+}
+
+/* --- Butonul Albastru --- */
+.submit-btn {
+    width: 100%;
+    padding: 14px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+}
+
+.submit-btn:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* --- Linkul de jos (Creare cont / Login) --- */
+.register-info {
+    margin-top: 25px;
+    font-size: 0.9rem;
+    color: #666;
+}
+
+.register-info a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-info a:hover {
+    text-decoration: underline;
+}
+
+/* --- Footer (Partea de jos) --- */
+footer {
+    background-color: #2c3e50; /* Asortat cu header-ul */
+    color: #ecf0f1;
+    text-align: center;
+    padding: 20px 0;
+    font-size: 0.85rem;
+}

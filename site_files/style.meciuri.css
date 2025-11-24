@@ -1,0 +1,487 @@
+/* --- Stiluri Globale --- */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+.container {
+    width: 100%;
+    padding: 0 20px;
+    box-sizing: border-box; 
+}
+
+/* ==============================================
+   1. STRUCTURA PAGINII (CSS GRID)
+   ============================================== */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 280px;
+    /* Header, Main+Aside, Footer */
+    grid-template-rows: auto 1fr auto;
+    grid-template-areas:
+        "header header"
+        "main   aside"
+        "footer footer";
+    
+    max-width: 1400px;
+    min-height: 100vh;
+    margin: 0 auto;
+    background-color: #fff;
+    box-shadow: 0 0 15px rgba(0,0,0,0.07);
+}
+
+/* --- HEADER (COPIAT EXACT DIN CODUL TĂU) --- */
+header {
+    grid-area: header;
+    background-color: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 20px 40px; /* Am păstrat padding-ul lateral de la grid */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    
+    /* Flexbox pentru aliniere Logo-Meniu */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* --- LOGO (COPIAT EXACT DIN CODUL TĂU) --- */
+/* --- LOGO (Actualizat să fie link) --- */
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2c3e50; /* Culoarea originală */
+    text-decoration: none; /* Scoatem sublinierea */
+    cursor: pointer; /* Mouse-ul devine mânuță */
+    display: inline-block;
+}
+
+/* Asigură-te că nu se face albastru când pui mouse-ul pe el */
+.logo:hover {
+    color: #2c3e50; 
+}
+
+/* --- NAVIGAȚIE (COPIAT EXACT DIN CODUL TĂU) --- */
+nav {
+    /* Nu mai e grid-area: nav, e în header acum */
+    display: flex;
+    align-items: center;
+}
+
+nav a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: #555;
+    font-weight: 600;
+    transition: color 0.3s ease;
+    padding: 0; /* Reset padding */
+}
+
+nav a:hover, nav a.active {
+    color: #007bff; /* Albastrul principal al site-ului */
+}
+
+/* --- Main Content --- */
+main {
+    grid-area: main;
+    padding: 40px; 
+    background-color: #f4f7f6;
+}
+
+/* --- Footer --- */
+footer {
+    grid-area: footer;
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #343a40;
+    color: #f8f9fa;
+    font-size: 0.9rem;
+}
+
+/* --- Bara Laterală (ASIDE) --- */
+.sidebar {
+    grid-area: aside;
+    padding: 30px;
+    background-color: #ffffff;
+    border-left: 1px solid #e0e0e0;
+}
+
+.sidebar h3 {
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+    color: #2c3e50;
+    margin-top: 0;
+}
+
+.sidebar ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.sidebar ul li a {
+    text-decoration: none;
+    color: #007bff;
+    line-height: 2;
+}
+.sidebar ul li a:hover {
+    text-decoration: underline;
+}
+
+.sidebar img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+
+/* ==============================================
+   2. CARDURI MECIURI & FLEXBOX
+   ============================================== */
+.upcoming-matches h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+.match-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+.match-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    padding: 25px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex-basis: 400px; 
+    flex-grow: 1;      
+    box-sizing: border-box; 
+    min-width: 300px;
+}
+
+.match-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.match-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.match-card .match-info {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.7;
+}
+
+.ticket-button {
+    display: block;
+    width: 100%;
+    background-color: #f0f7ff;
+    color: #007bff;
+    padding: 12px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 8px;
+    border: 1px solid #bde0ff;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+}
+
+.ticket-button:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+.upcoming-matches .etapa-title {
+    font-size: 1.8rem;
+    font-weight: 600;
+    color: #333;
+    margin-top: 40px;
+    margin-bottom: 20px;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+.upcoming-matches h2 + .etapa-title {
+    margin-top: 0;
+}
+
+/* ==============================================
+   3. BUTON "MERGI SUS"
+   ============================================== */
+.back-to-top {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border-radius: 50%;
+    font-size: 20px;
+    line-height: 1;
+    text-decoration: none;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+    transition: background-color 0.3s, transform 0.3s;
+    z-index: 1001;
+}
+
+.back-to-top:hover {
+    background-color: #0056b3;
+    transform: translateY(-3px);
+}
+
+/* ==============================================
+   4. STILURI MODAL
+   ============================================== */
+.modal-overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    z-index: 2000;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.modal-overlay.active {
+    display: flex;
+    opacity: 1;
+}
+
+.modal-content {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    width: 90%;
+    max-width: 500px;
+    position: relative;
+    transform: translateY(-20px);
+    transition: transform 0.3s ease;
+}
+
+.modal-overlay.active .modal-content {
+    transform: translateY(0);
+}
+
+.modal-close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 28px;
+    font-weight: bold;
+    color: #888;
+    cursor: pointer;
+}
+
+.modal-close:hover {
+    color: #333;
+}
+
+.modal-content h2 {
+    margin-top: 0;
+    margin-bottom: 5px;
+    color: #2c3e50;
+    font-size: 1.5rem;
+}
+
+.modal-subtitle {
+    color: #666;
+    margin-bottom: 25px;
+    font-size: 0.95rem;
+}
+
+.ticket-selection-group {
+    margin-bottom: 20px;
+}
+
+.ticket-selection-group label {
+    display: block;
+    font-weight: 600;
+    margin-bottom: 8px;
+    color: #444;
+}
+
+.ticket-selection-group select,
+.ticket-selection-group input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: 'Poppins', sans-serif;
+    box-sizing: border-box;
+}
+
+.price-display {
+    background-color: #f8f9fa;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #2c3e50;
+    margin-bottom: 25px;
+    border: 1px solid #e9ecef;
+}
+
+.price-display span {
+    color: #007bff;
+    font-size: 1.4rem;
+}
+
+.confirm-btn {
+    width: 100%;
+    padding: 12px;
+    font-size: 1.1rem;
+    cursor: pointer;
+    border: none;
+}
+
+/* ==============================================
+   5. STILURI COȘ CUMPĂRĂTURI (SIDEBAR)
+   ============================================== */
+.cart-card {
+    background-color: #f8f9fa;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 15px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+.cart-card h3 {
+    margin-top: 0;
+    font-size: 1.2rem;
+    color: #2c3e50;
+    border-bottom: 2px solid #007bff;
+    padding-bottom: 5px;
+    display: inline-block;
+}
+
+#lista-activitati {
+    list-style-type: none;
+    padding: 0;
+    margin: 10px 0 0 0;
+}
+
+.bilet-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+    padding: 10px;
+    margin-bottom: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+    font-size: 0.9rem;
+}
+
+.bilet-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.bilet-info strong {
+    color: #007bff;
+    font-size: 0.95rem;
+}
+
+.bilet-pret {
+    font-weight: bold;
+    color: #28a745;
+    margin: 0 10px;
+}
+
+.sterge-btn {
+    background-color: #ffcccc;
+    color: #d9534f;
+    border: none;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    font-weight: bold;
+    line-height: 1;
+    padding: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.sterge-btn:hover {
+    background-color: #d9534f;
+    color: white;
+}
+
+/* ==============================================
+   6. DESIGN RESPONSIV (MOBILE)
+   ============================================== */
+@media (max-width: 900px) {
+    .grid-container {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "header"
+            "main"
+            "aside"
+            "footer";
+    }
+
+    header {
+        flex-direction: column;
+        gap: 15px;
+        padding: 20px;
+    }
+
+    nav {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    main {
+        padding: 20px;
+    }
+
+    .sidebar {
+        border-left: none;
+        border-top: 1px solid #e0e0e0;
+    }
+
+    .match-card {
+        flex-basis: 100%;
+    }
+
+    .upcoming-matches h2 {
+        font-size: 2rem;
+    }
+}

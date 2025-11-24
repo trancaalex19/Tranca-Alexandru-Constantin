@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Creare Cont - Ticketing Pro</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.creare.css">
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <div class="logo">Ticketing Pro</div>
+            <nav>
+                <a href="index.html">Acasă</a>
+                <a href="pagina.meciuri.html">Meciuri</a>
+                <a href="ajutor.html">Ajutor</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="auth-page">
+        <div class="auth-card">
+            <h1>Creează un Cont Nou</h1>
+            <p class="subtitle">Completează datele pentru a-ți crea un cont.</p>
+            
+            <form action="/register" method="POST">
+                
+                <div class="form-group">
+                    <label for="nume">Nume complet:</label>
+                    <input type="text" id="nume" name="nume" placeholder="Numele tău complet" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Adresă Email:</label>
+                    <input type="email" id="email" name="email" placeholder="exemplu@mail.com" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Parolă:</label>
+                    <input type="password" id="password" name="password" placeholder="Minim 6 caractere" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirm-password">Confirmă Parola:</label>
+                    <input type="password" id="confirm-password" name="confirm-password" placeholder="Repetă parola" required>
+                </div>
+                
+                <button type="submit" class="submit-btn">Creează Cont</button>
+            </form>
+            
+            <p class="register-info">
+                Ai deja un cont? <a href="login.html">Autentifică-te</a>
+            </p>
+        </div>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Ticketing Pro. Toate drepturile rezervate.</p>
+    </footer>
+
+</body>
+</html>
