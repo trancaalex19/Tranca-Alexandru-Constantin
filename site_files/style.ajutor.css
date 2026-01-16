@@ -1,0 +1,1019 @@
+body, html {
+
+    margin: 0;
+
+    padding: 0;
+
+    font-family: 'Poppins', sans-serif;
+
+    background-color: #f4f7f6;
+
+    color: #333;
+
+    line-height: 1.6;
+
+    scroll-behavior: smooth;
+
+}
+
+
+
+.container {
+
+    max-width: 1200px;
+
+    margin: 0 auto;
+
+    padding: 0 20px;
+
+}
+
+
+
+header {
+
+    background-color: #fff;
+
+    border-bottom: 1px solid #e0e0e0;
+
+    padding: 20px 0;
+
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+
+    position: sticky;
+
+    top: 0;
+
+    z-index: 1000;
+
+}
+
+
+
+header .container {
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+}
+
+
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2c3e50; /* Culoarea originală */
+    text-decoration: none; /* Scoatem sublinierea */
+    cursor: pointer; /* Mouse-ul devine mânuță */
+    display: inline-block;
+}
+
+/* Asigură-te că nu se face albastru când pui mouse-ul pe el */
+.logo:hover {
+    color: #2c3e50; 
+}
+
+
+
+nav a {
+
+    margin-left: 25px;
+
+    text-decoration: none;
+
+    color: #555;
+
+    font-weight: 600;
+
+    transition: color 0.3s ease;
+
+}
+
+
+
+nav a:hover, nav a.active {
+
+    color: #007bff;
+
+}
+
+
+
+footer {
+
+    text-align: center;
+
+    padding: 30px 20px;
+
+    background-color: #343a40;
+
+    color: #f8f9fa;
+
+    font-size: 0.9rem;
+
+    margin-top: 0;
+
+}
+
+
+
+.hero {
+
+    position: relative;
+
+    padding: 100px 20px;
+
+    text-align: center;
+
+    color: white;
+
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('hero-bg.jpg');
+
+    background-size: cover;
+
+    background-position: center;
+
+    background-repeat: no-repeat;
+
+}
+
+
+
+.hero-content h1 {
+
+    font-size: 3rem;
+
+    font-weight: 700;
+
+    margin-top: 0;
+
+    margin-bottom: 15px;
+
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+
+}
+
+
+
+.hero-content p {
+
+    font-size: 1.25rem;
+
+    font-weight: 300;
+
+    margin-bottom: 30px;
+
+    max-width: 600px;
+
+    margin-left: auto;
+
+    margin-right: auto;
+
+}
+
+
+
+.cta-button {
+
+    display: inline-block;
+
+    background-color: #007bff;
+
+    color: white;
+
+    padding: 12px 30px;
+
+    font-size: 1rem;
+
+    font-weight: 600;
+
+    text-decoration: none;
+
+    border-radius: 8px;
+
+    transition: background-color 0.3s ease, transform 0.2s ease;
+
+}
+
+
+
+.cta-button:hover {
+
+    background-color: #0056b3;
+
+    transform: translateY(-2px);
+
+}
+
+
+
+.news-section {
+
+    padding: 60px 0;
+
+    background-color: #ffffff;
+
+}
+
+
+
+.news-section h2 {
+
+    text-align: center;
+
+    font-size: 2.5rem;
+
+    font-weight: 700;
+
+    color: #2c3e50;
+
+    margin-top: 0;
+
+    margin-bottom: 40px;
+
+}
+
+
+
+.news-list {
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 30px;
+
+}
+
+
+
+.news-card {
+
+    background: #ffffff;
+
+    border-radius: 12px;
+
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+
+    overflow: hidden;
+
+    display: flex;
+
+    flex-direction: column;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+
+
+.news-card:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+
+}
+
+
+
+.news-card img {
+
+    width: 100%;
+
+    height: 200px;
+
+    object-fit: cover;
+
+}
+
+
+
+.news-card .news-content {
+
+    padding: 25px;
+
+    display: flex;
+
+    flex-direction: column;
+
+    flex-grow: 1;
+
+}
+
+
+
+.news-card .news-meta {
+
+    font-size: 0.85rem;
+
+    color: #777;
+
+    margin-bottom: 10px;
+
+}
+
+
+
+.news-card h3 {
+
+    font-size: 1.25rem;
+
+    font-weight: 600;
+
+    color: #2c3e50;
+
+    margin-bottom: 15px;
+
+    flex-grow: 1;
+
+}
+
+
+
+.news-card p {
+
+    font-size: 0.95rem;
+
+    color: #555;
+
+    margin-bottom: 15px;
+
+}
+
+
+
+.news-card .read-more {
+
+    color: #007bff;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    margin-top: auto;
+
+}
+
+
+
+.news-card .read-more:hover {
+
+    text-decoration: underline;
+
+}
+
+
+
+.upcoming-matches {
+
+    padding: 60px 0;
+
+}
+
+
+
+.upcoming-matches h2 {
+
+    text-align: center;
+
+    font-size: 2.5rem;
+
+    font-weight: 700;
+
+    color: #2c3e50;
+
+    margin-top: 0;
+
+    margin-bottom: 40px;
+
+}
+
+
+
+.match-list {
+
+    display: grid;
+
+    grid-template-columns: repeat(2, 1fr);
+
+    gap: 30px;
+
+}
+
+
+
+.match-card {
+
+    background-color: #ffffff;
+
+    border-radius: 12px;
+
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+
+    padding: 25px;
+
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+
+
+.match-card:hover {
+
+    transform: translateY(-5px);
+
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+
+}
+
+
+
+.match-card h3 {
+
+    font-size: 1.5rem;
+
+    font-weight: 600;
+
+    color: #2c3e50;
+
+    margin-top: 0;
+
+    margin-bottom: 15px;
+
+}
+
+
+
+.match-card .match-info {
+
+    font-size: 0.95rem;
+
+    color: #555;
+
+    margin-bottom: 15px;
+
+    line-height: 1.7;
+
+}
+
+
+
+.ticket-button {
+
+    display: block;
+
+    width: 100%;
+
+    background-color: #f0f7ff;
+
+    color: #007bff;
+
+    padding: 12px;
+
+    text-align: center;
+
+    text-decoration: none;
+
+    font-weight: 600;
+
+    border-radius: 8px;
+
+    border: 1px solid #bde0ff;
+
+    box-sizing: border-box;
+
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+}
+
+
+
+.ticket-button:hover {
+
+    background-color: #007bff;
+
+    color: white;
+
+}
+
+
+
+.upcoming-matches .etapa-title {
+
+    font-size: 1.8rem;
+
+    font-weight: 600;
+
+    color: #333;
+
+    margin-top: 40px;
+
+    margin-bottom: 20px;
+
+    border-bottom: 2px solid #007bff;
+
+    padding-bottom: 5px;
+
+    display: inline-block;
+
+}
+
+
+
+.upcoming-matches h2 + .etapa-title {
+
+    margin-top: 0;
+
+}
+
+
+
+.standings {
+
+    padding: 40px 0;
+
+}
+
+
+
+.standings.page-section {
+
+    padding: 60px 0;
+
+    background-color: #ffffff;
+
+}
+
+
+
+.standings h2 {
+
+    text-align: center;
+
+    font-size: 2.5rem;
+
+    font-weight: 700;
+
+    color: #2c3e50;
+
+    margin-top: 0;
+
+    margin-bottom: 40px;
+
+}
+
+
+
+.standings h3 {
+
+    font-size: 1.8rem;
+
+    font-weight: 600;
+
+    color: #333;
+
+    margin-top: 10px;
+
+    margin-bottom: 20px;
+
+    border-bottom: 2px solid #007bff;
+
+    padding-bottom: 5px;
+
+    display: inline-block;
+
+}
+
+
+
+.standings-wrapper {
+
+    max-width: 900px;
+
+    margin: 0 auto;
+
+}
+
+
+
+table {
+
+    width: 100%;
+
+    border-collapse: collapse;
+
+    margin-bottom: 40px;
+
+    box-shadow: 0 4px 15px rgba(0,0,0,0.06);
+
+    border-radius: 8px;
+
+    overflow: hidden;
+
+}
+
+
+
+table thead tr {
+
+    background-color: #007bff;
+
+    color: #ffffff;
+
+    text-align: left;
+
+}
+
+
+
+table th, table td {
+
+    padding: 12px 15px;
+
+}
+
+
+
+table tbody tr {
+
+    border-bottom: 1px solid #f0f0f0;
+
+}
+
+
+
+table tbody tr:nth-of-type(even) {
+
+    background-color: #f9f9f9;
+
+}
+
+
+
+table tbody tr:last-of-type {
+
+    border-bottom: 2px solid #007bff;
+
+}
+
+
+
+table tbody tr:hover {
+
+    background-color: #f1f1f1;
+
+}
+
+
+
+table td strong {
+
+    font-weight: 700;
+
+    color: #000;
+
+}
+
+
+
+.order-history-page {
+
+    padding: 60px 0;
+
+    background-color: #f4f7f6;
+
+    min-height: calc(100vh - 170px);
+
+    display: flex;
+
+    flex-direction: column;
+
+}
+
+
+
+.order-history-page h2 {
+
+    text-align: center;
+
+    font-size: 2.5rem;
+
+    font-weight: 700;
+
+    color: #2c3e50;
+
+    margin-top: 0;
+
+    margin-bottom: 40px;
+
+}
+
+
+
+.empty-state-container {
+
+    max-width: 900px;
+
+    margin: 0 auto;
+
+    text-align: center;
+
+    background: #fff;
+
+    padding: 50px 30px;
+
+    border-radius: 12px;
+
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.07);
+
+}
+
+
+
+.empty-state-icon {
+
+    font-size: 4rem;
+
+    color: #007bff;
+
+    margin-bottom: 20px;
+
+    line-height: 1;
+
+}
+
+
+
+.empty-state-text {
+
+    font-size: 1.2rem;
+
+    color: #555;
+
+    margin: 0;
+
+    line-height: 1.7;
+
+}
+
+
+
+/* === STIL NOU ȘI ÎMBUNĂTĂȚIT PENTRU PAGINA "AJUTOR" === */
+
+
+
+.help-page {
+
+    padding: 60px 0;
+
+    background-color: #f9f9f9; /* Un gri și mai deschis */
+
+    min-height: calc(100vh - 170px);
+
+}
+
+
+
+.help-page h2 {
+
+    text-align: center;
+
+    font-size: 2.5rem;
+
+    font-weight: 700;
+
+    color: #2c3e50;
+
+    margin-top: 0;
+
+    margin-bottom: 10px;
+
+}
+
+
+
+.help-page .page-subtitle {
+
+    text-align: center;
+
+    font-size: 1.1rem;
+
+    color: #555;
+
+    margin-bottom: 50px; /* Spațiu mai mare */
+
+}
+
+
+
+.help-container {
+
+    display: grid;
+
+    grid-template-columns: 2fr 1fr; /* 2/3 pentru formular, 1/3 pentru info */
+
+    gap: 50px; /* Spațiu mai mare între coloane */
+
+    max-width: 1100px;
+
+    margin: 0 auto;
+
+}
+
+
+
+.contact-form-wrapper,
+
+.contact-details-wrapper {
+
+    background: #ffffff;
+
+    padding: 40px; /* Padding mai generos */
+
+    border-radius: 12px;
+
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.08); /* Umbră mai pronunțată */
+
+}
+
+
+
+.contact-form-wrapper h3,
+
+.contact-details-wrapper h3 {
+
+    font-size: 1.8rem;
+
+    font-weight: 600;
+
+    color: #333;
+
+    margin-top: 0;
+
+    margin-bottom: 30px;
+
+    border-bottom: 2px solid #007bff;
+
+    padding-bottom: 8px; /* Subliniere mai groasă */
+
+    display: inline-block;
+
+}
+
+
+
+.form-group {
+
+    margin-bottom: 25px; /* Spațiu mai mare între câmpuri */
+
+}
+
+
+
+.form-group label {
+
+    display: block;
+
+    margin-bottom: 10px; /* Spațiu mai mare între etichetă și input */
+
+    font-weight: 600;
+
+    font-size: 0.95rem; /* Puțin mai mare */
+
+    color: #444;
+
+}
+
+
+
+.form-group input[type="text"],
+
+.form-group input[type="email"],
+
+.form-group textarea {
+
+    width: 100%;
+
+    padding: 15px; /* Padding mai mare în interior */
+
+    border: 1px solid #e0e0e0; /* Border mai fin */
+
+    border-radius: 8px;
+
+    font-size: 1rem;
+
+    font-family: 'Poppins', sans-serif;
+
+    box-sizing: border-box;
+
+    background-color: #fdfdfd;
+
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+
+
+.form-group input::placeholder,
+
+.form-group textarea::placeholder {
+
+    color: #aaa;
+
+}
+
+
+
+.form-group input[type="text"]:focus,
+
+.form-group input[type="email"]:focus,
+
+.form-group textarea:focus {
+
+    border-color: #007bff;
+
+    /* Umbră de focus mai subtilă și modernă */
+
+    box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+
+    outline: none;
+
+    background-color: #fff;
+
+}
+
+
+
+.form-group textarea {
+
+    height: 160px;
+
+    resize: vertical;
+
+}
+
+
+
+/* Butonul de trimitere - mai mare și mai evident */
+
+.contact-form-wrapper .cta-button {
+
+    width: 100%;
+
+    box-sizing: border-box;
+
+    font-size: 1.1rem;
+
+    padding: 15px 30px; /* Buton mai înalt */
+
+    margin-top: 10px;
+
+}
+
+
+
+.contact-details-wrapper h4 {
+
+    font-size: 1.1rem;
+
+    color: #007bff;
+
+    margin-top: 20px;
+
+    margin-bottom: 5px;
+
+}
+
+
+
+.contact-details-wrapper p {
+
+    font-size: 1rem;
+
+    color: #333;
+
+    margin-top: 0;
+
+    margin-bottom: 15px;
+
+    line-height: 1.7;
+
+}
+
+
+
+/* Ajustare pentru ecrane mici */
+
+@media (max-width: 900px) {
+
+    .help-container {
+
+        grid-template-columns: 1fr; /* O singură coloană pe mobil */
+
+    }
+
+}

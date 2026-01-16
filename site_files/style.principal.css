@@ -1,0 +1,283 @@
+/* --- Stiluri Globale --- */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* --- HEADER (Stilul tău de bază) --- */
+header {
+    background-color: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between; /* Logo stânga, Meniu dreapta */
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    text-decoration: none; /* Pentru a fi link, dar să arate ca text */
+}
+
+.logo:hover {
+    color: #2c3e50;
+}
+
+nav a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: #555;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav a:hover, nav a.active {
+    color: #007bff;
+}
+
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #343a40;
+    color: #f8f9fa;
+    font-size: 0.9rem;
+    margin-top: 40px; /* Spațiu deasupra */
+}
+
+/* --- 1. SECȚIUNEA HERO --- */
+.hero {
+    position: relative;
+    padding: 100px 20px;
+    text-align: center;
+    color: white;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('fotbalist.jpg'); /* Imaginea de fundal */
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    font-weight: 300;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* --- 2. SECȚIUNEA MECIURI (Carduri) --- */
+.upcoming-matches {
+    padding: 60px 0;
+}
+
+.upcoming-matches h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+.match-list {
+    display: flex; /* Folosim Flexbox pentru aranjare */
+    justify-content: center;
+    flex-wrap: wrap; 
+    gap: 30px;
+}
+
+.match-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    padding: 25px;
+    flex-basis: 450px; /* Lățimea de bază */
+    flex-grow: 1;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.match-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.match-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.match-card .match-info {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.7;
+}
+
+.ticket-button {
+    display: block;
+    width: 100%;
+    background-color: #f0f7ff;
+    color: #007bff;
+    padding: 12px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 8px;
+    border: 1px solid #bde0ff;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+}
+
+.ticket-button:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* --- 3. SECȚIUNEA ȘTIRI --- */
+.news-section {
+    padding: 60px 0;
+    background-color: #ffffff;
+}
+
+.news-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.news-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}
+
+.news-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.news-card .news-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.news-card .news-meta {
+    font-size: 0.85rem;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.news-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    flex-grow: 1; 
+}
+
+.news-card .read-more {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: auto;
+}
+
+.news-card .read-more:hover {
+    text-decoration: underline;
+}
+
+/* --- 4. STILURI PENTRU MODAL (Pop-up) --- */
+/* Aceste stiluri sunt necesare pentru că pagina le folosește (le poți copia din style.meciuri.css dacă vrei să le unifici) */
+.modal-overlay {
+    display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background-color: rgba(0, 0, 0, 0.7); z-index: 2000; align-items: center; justify-content: center; opacity: 0; transition: opacity 0.3s ease;
+}
+.modal-overlay.active { display: flex; opacity: 1; }
+.modal-content { background-color: #fff; padding: 30px; border-radius: 12px; box-shadow: 0 10px 30px rgba(0,0,0,0.3); max-width: 500px; position: relative; transform: translateY(-20px); transition: transform 0.3s ease; }
+.modal-close { position: absolute; top: 15px; right: 20px; font-size: 28px; font-weight: bold; color: #888; cursor: pointer; }
+.modal-content h2 { margin-top: 0; margin-bottom: 5px; color: #2c3e50; font-size: 1.5rem; }
+.modal-subtitle { color: #666; margin-bottom: 25px; font-size: 0.95rem; }
+.ticket-selection-group { margin-bottom: 20px; }
+.ticket-selection-group label { display: block; font-weight: 600; margin-bottom: 8px; color: #444; }
+.ticket-selection-group select, .ticket-selection-group input { width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 6px; font-size: 1rem; font-family: 'Poppins', sans-serif; box-sizing: border-box; }
+.price-display { background-color: #f8f9fa; padding: 15px; border-radius: 8px; text-align: center; font-weight: 700; font-size: 1.2rem; color: #2c3e50; margin-bottom: 25px; border: 1px solid #e9ecef; }
+.price-display span { color: #007bff; font-size: 1.4rem; }
+.confirm-btn { width: 100%; padding: 12px; font-size: 1.1rem; cursor: pointer; border: none; }
+
+
+/* --- 5. DESIGN RESPONSIV (Minim) --- */
+@media (max-width: 900px) {
+    .match-list {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .news-list {
+        grid-template-columns: 1fr; /* Știrile se pun una sub alta */
+    }
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    nav {
+        margin-top: 15px;
+    }
+    .match-card, .news-card {
+        width: 100%;
+    }
+}

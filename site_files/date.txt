@@ -1,0 +1,8 @@
+Rol admin
+Username:Admin
+Email: admin@test.ro
+Parola: Admin123
+
+Rol User
+Email:cod@yahoo.com
+Parola:A1234567

@@ -1,0 +1,352 @@
+/* --- Stiluri Globale --- */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* ==============================================
+   1. HEADER & NAV (STIL UNITAR PESTE TOT)
+   ============================================== */
+header {
+    background-color: #fff;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 20px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+header .container {
+    display: flex;
+    justify-content: space-between; /* Logo stânga, Meniu dreapta */
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    text-decoration: none;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.logo:hover {
+    color: #007bff; /* Un mic efect de culoare la hover */
+}
+
+nav a {
+    margin-left: 25px;
+    text-decoration: none;
+    color: #555;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav a:hover, nav a.active {
+    color: #007bff;
+}
+
+/* --- FOOTER --- */
+footer {
+    text-align: center;
+    padding: 30px 20px;
+    background-color: #343a40;
+    color: #f8f9fa;
+    font-size: 0.9rem;
+    margin-top: 40px; 
+}
+
+/* ==============================================
+   2. STILURI PAGINĂ PRINCIPALĂ (HERO, MECIURI)
+   ============================================== */
+
+/* --- Secțiunea Hero --- */
+.hero {
+    position: relative;
+    padding: 100px 20px;
+    text-align: center;
+    color: white;
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url('fotbalist.jpg'); 
+    background-size: cover;
+    background-position: center bottom; /* Vedem piciorul fotbalistului */
+    background-repeat: no-repeat;
+}
+
+.hero-content h1 {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-top: 0;
+    margin-bottom: 15px;
+    text-shadow: 2px 2px 8px rgba(0,0,0,0.7);
+}
+
+.hero-content p {
+    font-size: 1.25rem;
+    font-weight: 300;
+    margin-bottom: 30px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.cta-button {
+    display: inline-block;
+    background-color: #007bff;
+    color: white;
+    padding: 12px 30px;
+    font-size: 1rem;
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.cta-button:hover {
+    background-color: #0056b3;
+    transform: translateY(-2px);
+}
+
+/* --- Carduri Meciuri (pe pagina principală) --- */
+.upcoming-matches {
+    padding: 60px 0;
+}
+
+.upcoming-matches h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+.match-list {
+    display: flex; /* Folosim Flexbox */
+    justify-content: center;
+    flex-wrap: wrap; 
+    gap: 30px;
+}
+
+.match-card {
+    background-color: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    padding: 25px;
+    flex-basis: 450px; 
+    flex-grow: 1;
+    box-sizing: border-box;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.match-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.match-card h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 15px;
+}
+
+.match-card .match-info {
+    font-size: 0.95rem;
+    color: #555;
+    margin-bottom: 15px;
+    line-height: 1.7;
+}
+
+.ticket-button {
+    display: block;
+    width: 100%;
+    background-color: #f0f7ff;
+    color: #007bff;
+    padding: 12px;
+    text-align: center;
+    text-decoration: none;
+    font-weight: 600;
+    border-radius: 8px;
+    border: 1px solid #bde0ff;
+    box-sizing: border-box;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    cursor: pointer;
+    font-family: 'Poppins', sans-serif;
+}
+
+.ticket-button:hover {
+    background-color: #007bff;
+    color: white;
+}
+
+/* --- Secțiunea Știri --- */
+.news-section {
+    padding: 60px 0;
+    background-color: #ffffff;
+}
+
+.news-section h2 {
+    text-align: center;
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 40px;
+}
+
+.news-list {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+.news-card {
+    background: #ffffff;
+    border-radius: 12px;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+}
+
+.news-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.news-card .news-content {
+    padding: 25px;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+.news-card .news-meta {
+    font-size: 0.85rem;
+    color: #777;
+    margin-bottom: 10px;
+}
+
+.news-card h3 {
+    font-size: 1.25rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 15px;
+    flex-grow: 1; 
+}
+
+.news-card .read-more {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: auto;
+}
+
+.news-card .read-more:hover {
+    text-decoration: underline;
+}
+
+
+/* ==============================================
+   3. STILURI PAGINI ARTICOLE (Citit)
+   ============================================== */
+
+.article-page {
+    padding: 40px 0;
+    background-color: #ffffff;
+}
+
+.article-page .container {
+    max-width: 800px; /* Lățime optimă pentru citit */
+    margin: 0 auto;
+}
+
+.article-page .article-header {
+    border-bottom: 2px solid #f0f0f0;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+}
+
+.article-page h1 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-top: 0;
+    margin-bottom: 5px;
+    line-height: 1.2;
+}
+
+.article-page .meta {
+    color: #777;
+    font-size: 0.9rem;
+}
+
+.article-page img.main-image {
+    width: 100%;
+    height: auto;
+    max-height: 450px;
+    object-fit: cover;
+    margin: 30px 0;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+}
+
+.article-page p {
+    line-height: 1.8;
+    font-size: 1.1rem;
+    color: #333;
+    margin-bottom: 25px;
+    text-align: justify;
+}
+
+.article-page p strong {
+    color: #007bff;
+    font-weight: 700;
+}
+
+
+/* ==============================================
+   4. DESIGN RESPONSIV (MOBILE)
+   ============================================== */
+@media (max-width: 900px) {
+    header .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    nav {
+        margin-top: 15px;
+    }
+    .match-list {
+        flex-direction: column; /* Cardurile de meci se pun una sub alta */
+        gap: 20px;
+    }
+    .news-list {
+        grid-template-columns: 1fr; /* Știrile se pun una sub alta */
+    }
+    .match-card {
+        width: 100%;
+    }
+    .upcoming-matches h2, .news-section h2 {
+        font-size: 2rem;
+    }
+}
