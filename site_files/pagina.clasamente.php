@@ -33,6 +33,41 @@ session_start();
             background-color: #d9534f !important; color: white !important; text-decoration: none !important;
             transform: translateY(-1px);
         }
+
+        /* --- STILURI PENTRU BUTONUL BACK TO TOP (STANGA JOS) --- */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            left: 30px; /* Poziționat în stânga */
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, #ff6b6b, #d9534f);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-decoration: none;
+            font-size: 24px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+            z-index: 1000;
+            opacity: 0; /* Ascuns inițial */
+            visibility: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 2px solid white;
+        }
+        
+        .back-to-top.show {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        .back-to-top:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.4);
+            color: white;
+        }
     </style>
 </head>
 <body>
@@ -128,6 +163,33 @@ session_start();
     <footer>
         <p>&copy; 2025 Ticketing Pro. Toate drepturile rezervate.</p>
     </footer>
+
+    <a href="#" class="back-to-top" id="backToTop" title="Înapoi sus">
+        &#8679; </a>
+
+    <script>
+        // Selectăm butonul
+        const backToTopButton = document.getElementById("backToTop");
+
+        // Ascultăm evenimentul de scroll
+        window.addEventListener("scroll", () => {
+            // Dacă am scrollat mai mult de 300px, arată butonul
+            if (window.scrollY > 300) {
+                backToTopButton.classList.add("show");
+            } else {
+                backToTopButton.classList.remove("show");
+            }
+        });
+
+        // Când dăm click, mergem sus lin
+        backToTopButton.addEventListener("click", (e) => {
+            e.preventDefault(); // Previne comportamentul standard al linkului
+            window.scrollTo({
+                top: 0,
+                behavior: "smooth"
+            });
+        });
+    </script>
 
 </body>
 </html>

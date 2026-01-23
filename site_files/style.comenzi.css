@@ -170,3 +170,40 @@ footer {
     .order-card { flex-direction: column; align-items: flex-start; gap: 15px; }
     .order-actions { width: 100%; flex-direction: row; justify-content: space-between; align-items: center; }
 }
+/* Butonul de Finalizare (Verde) */
+.btn-finalize {
+    background-color: #28a745; /* Verde succes */
+    color: white;
+    border: none;
+    padding: 8px 20px;
+    border-radius: 6px;
+    font-weight: 600;
+    font-size: 0.9rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-bottom: 5px; /* Puțin spațiu sub el */
+    display: inline-block;
+}
+
+.btn-finalize:hover {
+    background-color: #218838; /* Verde mai închis la hover */
+    transform: translateY(-2px); /* Efect de ridicare fin */
+    box-shadow: 0 4px 6px rgba(40, 167, 69, 0.2);
+}
+
+/* Asigură-te că butonul Șterge arată bine lângă el */
+.btn-delete {
+    padding: 6px 15px;
+    background-color: transparent;
+    border: 1px solid #dc3545;
+    color: #dc3545;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.btn-delete:hover {
+    background-color: #dc3545;
+    color: white;
+}

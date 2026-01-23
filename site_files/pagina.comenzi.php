@@ -36,6 +36,7 @@ if ($is_logged_in && !$conn->connect_error) {
     <link rel="stylesheet" href="style.comenzi.css">
     
     <style>
+        /* CSS-ul tău pentru header */
         header nav { display: flex !important; align-items: center !important; gap: 15px; }
         .user-profile {
             display: flex !important; align-items: center !important; gap: 12px !important;
@@ -57,6 +58,42 @@ if ($is_logged_in && !$conn->connect_error) {
         .logout-link:hover { 
             background-color: #d9534f !important; color: white !important; text-decoration: none !important;
             transform: translateY(-1px);
+        }
+
+        /* STILURILE PENTRU BUTOANELE NOI */
+        .btn-finalize {
+            background-color: #28a745; /* Verde succes */
+            color: white;
+            border: none;
+            padding: 8px 20px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            width: 100%; /* Să ocupe lățimea containerului */
+            margin-bottom: 5px;
+        }
+        .btn-finalize:hover {
+            background-color: #218838;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 6px rgba(40, 167, 69, 0.2);
+        }
+
+        .btn-delete {
+            padding: 6px 15px;
+            background-color: transparent;
+            border: 1px solid #dc3545;
+            color: #dc3545;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            width: 100%;
+        }
+        .btn-delete:hover {
+            background-color: #dc3545;
+            color: white;
         }
     </style>
 </head>
@@ -166,6 +203,7 @@ if ($is_logged_in && !$conn->connect_error) {
                     const card = document.createElement('div');
                     card.className = 'order-card'; 
                     
+                    // AICI ESTE MODIFICAREA PRINCIPALA: Clasele btn-finalize și btn-delete
                     card.innerHTML = `
                         <div class="order-info">
                             <h3>${comanda.meci}</h3>
@@ -175,10 +213,12 @@ if ($is_logged_in && !$conn->connect_error) {
                                 <span style="font-size:0.85rem; color:#999;">În coș (nefinalizat)</span>
                             </div>
                         </div>
-                        <div class="order-actions">
-                            <div class="order-price">${comanda.pretTotal} RON</div>
-                            <button class="finalize-btn" onclick="finalizeazaComanda()">Finalizează</button>
-                            <button class="delete-btn" onclick="stergeDinCos(${indexReal})">Șterge</button>
+                        <div class="order-actions" style="display:flex; flex-direction:column; gap:5px; align-items:flex-end;">
+                            <div class="order-price" style="margin-bottom:10px;">${comanda.pretTotal} RON</div>
+                            
+                            <button class="btn-finalize" onclick="finalizeazaComanda()">Finalizează</button>
+                            
+                            <button class="btn-delete" onclick="stergeDinCos(${indexReal})">Șterge</button>
                         </div>
                     `;
                     ordersList.appendChild(card);
